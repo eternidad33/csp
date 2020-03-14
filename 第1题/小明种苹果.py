@@ -1,16 +1,16 @@
-N,M=map(int,input().split())
-T,k,P=0,0,0
+N, M = map(int, input().split())
+T, k, P = 0, 0, 0
 for i in range(N):
-    s=list(map(int,input().split()))
-    a0,am=s[0],s[1:]
-    T+=a0
-    am=map(abs,am)
-    p=sum(am)
-    T-=p
-    if p>P:
-        P=p
-        k=i+1
-print(T,k,P)
+    s = list(map(int, input().split()))
+    a0, am = s[0], s[1:]
+    T += a0
+    am = map(abs, am)
+    p = sum(am)
+    T -= p
+    if p > P:
+        P = p
+        k = i + 1
+print(T, k, P)
 '''
 输入
 3 3
