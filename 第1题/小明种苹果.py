@@ -11,6 +11,7 @@ for i in range(N):
         P = p
         k = i + 1
 print(T, k, P)
+
 '''
 输入
 3 3
