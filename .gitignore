@@ -19,3 +19,6 @@ out
 .DS_Store
 Thumbs.db
 *.stackdump
+
+.vscode
+.history
