@@ -20,6 +20,6 @@ public class 相反数 {
                 }
             }
         }
-        System.out.println(s / 2);
+        System.out.println(s);
     }
 }
