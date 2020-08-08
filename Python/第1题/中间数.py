@@ -12,5 +12,5 @@ for i in a:
         print(i)
         t = True
         break
-if t == False:
+if not t:
     print(-1)
