@@ -1,13 +1,10 @@
 n = int(input())
-num = []
-for i in range(10001):
-    num += [0]
-s = input().split()
-for i in range(n):
-    s[i] = int(s[i])
-    num[s[i]] += 1
-max_num = [0, 0]
-for i in range(10001):
-    if num[i] >= max_num[0]:
-        max_num[0], max_num[1] = i, num[i]
-print(max_num[0])
+l = list(map(int, input().split()))
+# 先将数据转成集合，然后再转成列表
+s = list(set(l))
+# t用于记录s中元素在l出现的次数
+t = []
+for x in s:
+    t.append(l.count(x))
+# t中最大值对应的索引即为所求
+print(s[t.index(max(t))])
