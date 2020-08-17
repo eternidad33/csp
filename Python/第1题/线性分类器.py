@@ -8,58 +8,62 @@
 @desc: 
 """
 
-n, m = map(int, input().split())
-datas = []
-# 录入数据
-for i in range(n):
-    data = input().split()
-    data[0] = int(data[0])
-    data[1] = int(data[1])
-    datas.append(data)
-flags = []
-for i in range(m):
-    line = list(map(int, input().split()))
-    flag = True
-    # 判断第一个点的位置
-    r1 = datas[0][0] * line[1] + datas[0][1] * line[2] + line[0]
-    if r1 > 0 and datas[0][2] == 'A':
-        AisUp = True
-    elif r1 < 0 and datas[0][2] != 'A':
-        AisUp = True
-    else:
-        AisUp = False
 
-    for j in range(1, n):
-        result = datas[j][0] * line[1] + datas[j][1] * line[2] + line[0]
-        if AisUp:
-            if result > 0 and datas[j][2] == 'A':
-                flag = True
-            elif result > 0 and datas[j][2] == 'B':
-                flag = False
-                break
-            elif result < 0 and datas[j][2] == "A":
-                flag = False
-                break
-            elif result < 0 and datas[j][2] == "B":
-                flag = True
+def xianXingFenLeiQi():
+    n, m = map(int, input().split())
+    datas = []
+    # 录入数据
+    for i in range(n):
+        data = input().split()
+        data[0] = int(data[0])
+        data[1] = int(data[1])
+        datas.append(data)
+    flags = []
+    for i in range(m):
+        line = list(map(int, input().split()))
+        flag = True
+        # 判断第一个点的位置
+        r1 = datas[0][0] * line[1] + datas[0][1] * line[2] + line[0]
+        if r1 > 0 and datas[0][2] == 'A':
+            AisUp = True
+        elif r1 < 0 and datas[0][2] != 'A':
+            AisUp = True
         else:
-            if result < 0 and datas[j][2] == 'A':
-                flag = True
-            elif result < 0 and datas[j][2] == 'B':
-                flag = False
-                break
-            elif result > 0 and datas[j][2] == "A":
-                flag = False
-                break
-            elif result > 0 and datas[j][2] == "B":
-                flag = True
-    flags.append(flag)
+            AisUp = False
 
-for flag in flags:
-    if flag:
-        print("Yes")
-    else:
-        print("No")
+        for j in range(1, n):
+            result = datas[j][0] * line[1] + datas[j][1] * line[2] + line[0]
+            if AisUp:
+                if result > 0 and datas[j][2] == 'A':
+                    flag = True
+                elif result > 0 and datas[j][2] == 'B':
+                    flag = False
+                    break
+                elif result < 0 and datas[j][2] == "A":
+                    flag = False
+                    break
+                elif result < 0 and datas[j][2] == "B":
+                    flag = True
+            else:
+                if result < 0 and datas[j][2] == 'A':
+                    flag = True
+                elif result < 0 and datas[j][2] == 'B':
+                    flag = False
+                    break
+                elif result > 0 and datas[j][2] == "A":
+                    flag = False
+                    break
+                elif result > 0 and datas[j][2] == "B":
+                    flag = True
+        flags.append(flag)
+    for flag in flags:
+        if flag:
+            print("Yes")
+        else:
+            print("No")
+
+
+xianXingFenLeiQi()
 
 # def line_sort(in_list):
 #     flag_gt = -1
