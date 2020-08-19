@@ -1,5 +1,5 @@
 def xiaoChuLeiYouXi(A, n, m):
-    # B中为
+    # B中元素为1，代表在A中连续
     B = [[0] * m for _ in range(n)]
     global i
     for i in range(n):
