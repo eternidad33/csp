@@ -1,24 +1,32 @@
+def xiaoChuLeiYouXi(A, n, m):
+    # B中为
+    B = [[0] * m for _ in range(n)]
+    global i
+    for i in range(n):
+        for j in range(m):
+            # 竖排三个相同
+            if 0 < i < n - 1 and A[i - 1][j] == A[i][j] and A[i][j] == A[i + 1][j]:
+                B[i - 1][j] = 1
+                B[i][j] = 1
+                B[i + 1][j] = 1
+            # 横排三个相同
+            if 0 < j < m - 1 and A[i][j - 1] == A[i][j] and A[i][j] == A[i][j + 1]:
+                B[i][j - 1] = 1
+                B[i][j] = 1
+                B[i][j + 1] = 1
+    for i in range(n):
+        for j in range(m):
+            if B[i][j] == 1:
+                A[i][j] = 0
+            print(A[i][j], end=" ")
+        print()
+
+
 n, m = map(int, input().split())
-bmap = []
-amap = [[0] * m for _ in range(n)]
+lm = []
 for i in range(n):
-    bmap.append(list(map(int, input().split())))
-for i in range(n):
-    for j in range(m):
-        if 0 < i < n - 1 and bmap[i - 1][j] == bmap[i][j] and bmap[i][j] == bmap[i + 1][j]:
-            amap[i - 1][j] = 1
-            amap[i][j] = 1
-            amap[i + 1][j] = 1
-        if 0 < j < m - 1 and bmap[i][j - 1] == bmap[i][j] and bmap[i][j] == bmap[i][j + 1]:
-            amap[i][j - 1] = 1
-            amap[i][j] = 1
-            amap[i][j + 1] = 1
-for i in range(n):
-    for j in range(m):
-        if amap[i][j] == 1:
-            bmap[i][j] = 0
-        print(bmap[i][j], end=" ")
-    print()
+    lm.append(list(map(int, input().split())))
+xiaoChuLeiYouXi(lm, n, m)
 '''
 4 5
 2 2 3 1 2
