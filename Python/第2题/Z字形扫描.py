@@ -9,17 +9,17 @@
 """
 
 
-def z(num):
+def z(m, num):
     # up用于存储是否向上遍历，默认向上遍历
     up = True
     line = []
     i, j = 0, 0
-    for _ in range(n * n):
+    for _ in range(m * m):
         line.append(num[i][j])
         # 处理向上移动
         if up:
             # 处理碰到右边界，下移
-            if j == n - 1:
+            if j == m - 1:
                 i += 1
                 up = False
             # 处理碰到上边界，右移
@@ -31,7 +31,7 @@ def z(num):
                 j += 1
                 i -= 1
         else:
-            if i == n - 1:
+            if i == m - 1:
                 j += 1
                 up = True
             elif j == 0:
@@ -47,4 +47,4 @@ n = int(input())
 pnum = []
 for i in range(n):
     pnum.append(list(map(int, input().split())))
-z(pnum)
+z(n, pnum)
