@@ -4,17 +4,19 @@
 
 ## 目录
 
-- [题解列表](#题解列表)
-- [常用代码片段](#常用代码片段)
-  - [四舍五入](#四舍五入)
-  - [向上向下取整](#向上向下取整)
-  - [输入输出](#输入输出)
-  - [内置函数](#内置函数)
-    - [map()函数](#map函数)
-    - [zip()函数](#zip函数)
-    - [sorted()函数](#sorted函数)
-    - [enumerate() 函数](#enumerate-函数)
-  - [匿名函数](#匿名函数)
+- [Python 题解](#python-题解)
+  - [目录](#目录)
+  - [题解列表](#题解列表)
+  - [常用代码片段](#常用代码片段)
+    - [四舍五入](#四舍五入)
+    - [向上向下取整](#向上向下取整)
+    - [输入输出](#输入输出)
+    - [内置函数](#内置函数)
+      - [map()函数](#map函数)
+      - [zip()函数](#zip函数)
+      - [sorted()函数](#sorted函数)
+      - [enumerate() 函数](#enumerate-函数)
+    - [匿名函数](#匿名函数)
 
 ## 题解列表
 
@@ -58,24 +60,24 @@
 ### 输入输出
 
 ```python
->>> # 输入一个整数
+# 输入一个整数
 >>> n=int(input())
 6
 >>> n
 6
 
->>> # 输入一个整型列表
+# 输入一个整型列表
 >>> l=list(map(int,input().split()))
 1 2 3 4 5 6
 >>> l
 [1, 2, 3, 4, 5, 6]
 
->>> # 同一行输出
+# 同一行输出
 >>> print(' '.join(map(str,l)))
 1 2 3 4 5 6
 >>> print(" ".join(str(i) for i in l))
 1 2 3 4 5 6
->>> # 也可遍历输出
+# 也可遍历输出
 >>> for i in l:
 ...     print(i,end=' ')
 ...
@@ -84,9 +86,9 @@
 
 ### 内置函数
 
-Python 内置函数如下，使用方式可查看[菜鸟教程](https://www.runoob.com/python/python-built-in-functions.html)
+Python 内置函数如下，使用方式可查看[菜鸟教程](https://www.runoob.com/python3/python3-built-in-functions.html)
 
-[![Python内置函数](https://cdn.jsdelivr.net/gh/eternidad33/picbed/img/QQ%E6%88%AA%E5%9B%BE20200822165031.png)](https://www.runoob.com/python/python-built-in-functions.html)
+[![Python内置函数](https://cdn.jsdelivr.net/gh/eternidad33/picbed/img/QQ%E6%88%AA%E5%9B%BE20200822184129.png)](https://www.runoob.com/python3/python3-built-in-functions.html)
 
 #### map()函数
 
@@ -102,7 +104,6 @@ Python 内置函数如下，使用方式可查看[菜鸟教程](https://www.runo
 # 提供了两个列表，对相同位置的列表数据进行相加
 >>> map(lambda x, y: x + y, [1, 3, 5, 7, 9], [2, 4, 6, 8, 10])
 [3, 7, 11, 15, 19]
-
 ```
 
 #### zip()函数
@@ -111,70 +112,95 @@ Python 内置函数如下，使用方式可查看[菜鸟教程](https://www.runo
 >>>a = [1,2,3]
 >>> b = [4,5,6]
 >>> c = [4,5,6,7,8]
->>> zipped = zip(a,b)     # 打包为元组的列表
+>>> zipped = zip(a,b)     # 返回一个对象
+>>> zipped
+<zip object at 0x103abc288>
+>>> list(zipped)  # list() 转换为列表
 [(1, 4), (2, 5), (3, 6)]
->>> zip(a,c)              # 元素个数与最短的列表一致
+>>> list(zip(a,c))              # 元素个数与最短的列表一致
 [(1, 4), (2, 5), (3, 6)]
->>> zip(*zipped)          # 与 zip 相反，*zipped 可理解为解压，返回二维矩阵式
-[(1, 2, 3), (4, 5, 6)]
+ 
+>>> a1, a2 = zip(*zip(a,b))          # 与 zip 相反，zip(*) 可理解为解压，返回二维矩阵式
+>>> list(a1)
+[1, 2, 3]
+>>> list(a2)
+[4, 5, 6]
 ```
 
 #### sorted()函数
 
 ```python
->>>a = [5,7,6,3,4,1,2]
->>> b = sorted(a)       # 保留原列表
+# 以下实例展示了 sorted 的最简单的使用方法：
+>>> sorted([5, 2, 3, 1, 4])
+[1, 2, 3, 4, 5]                      # 默认为升序
+
+# 你也可以使用 list 的 list.sort() 方法。这个方法会修改原始的 list（返回值为None）。通常这个方法不如sorted()方便-如果你不需要原始的 list，list.sort()方法效率会稍微高一些。
+>>> a=[5,2,3,1,4]
+>>> a.sort()
 >>> a
-[5, 7, 6, 3, 4, 1, 2]
->>> b
-[1, 2, 3, 4, 5, 6, 7]
+[1,2,3,4,5]
 
->>> L=[('b',2),('a',1),('c',3),('d',4)]
->>> sorted(L, cmp=lambda x,y:cmp(x[1],y[1]))   # 利用cmp函数
-[('a', 1), ('b', 2), ('c', 3), ('d', 4)]
->>> sorted(L, key=lambda x:x[1])               # 利用key
-[('a', 1), ('b', 2), ('c', 3), ('d', 4)]
+# 另一个区别在于list.sort() 方法只为 list 定义。而 sorted() 函数可以接收任何的 iterable。
+>>> sorted({1: 'D', 2: 'B', 3: 'B', 4: 'E', 5: 'A'})
+[1, 2, 3, 4, 5]
 
+# 利用key进行倒序排序
+>>> example_list = [5, 0, 6, 1, 2, 7, 3, 4]
+>>> result_list = sorted(example_list, key=lambda x: x*-1)
+>>> print(result_list)
+[7, 6, 5, 4, 3, 2, 1, 0]
 
->>> students = [('john', 'A', 15), ('jane', 'B', 12), ('dave', 'B', 10)]
->>> sorted(students, key=lambda s: s[2])            # 按年龄排序
-[('dave', 'B', 10), ('jane', 'B', 12), ('john', 'A', 15)]
-
->>> sorted(students, key=lambda s: s[2], reverse=True)       # 按降序
-[('john', 'A', 15), ('jane', 'B', 12), ('dave', 'B', 10)]
+# 要进行反向排序，也通过传入第三个参数 reverse=True：
+>>> example_list = [5, 0, 6, 1, 2, 7, 3, 4]
+>>> sorted(example_list, reverse=True)
+[7, 6, 5, 4, 3, 2, 1, 0]
 ```
 
 #### enumerate() 函数
 
 ```python
+#  以下展示了使用 enumerate() 方法的实例：
 >>> seasons = ['Spring', 'Summer', 'Fall', 'Winter']
 >>> list(enumerate(seasons))
 [(0, 'Spring'), (1, 'Summer'), (2, 'Fall'), (3, 'Winter')]
->>> list(enumerate(seasons, start=1))       # 下标从 1 开始
+>>> list(enumerate(seasons, start=1))       # 小标从 1 开始
 [(1, 'Spring'), (2, 'Summer'), (3, 'Fall'), (4, 'Winter')]
 
->>> # 普通的 for 循环
->>> i = 0
->>> seq = ['one', 'two', 'three']
->>> for element in seq:
-...     print i, seq[i]
-...     i +=1
-...
+
+# 普通的 for 循环
+i = 0
+seq = ['one', 'two', 'three']
+for element in seq:
+    print(i, seq[i])
+    i += 1
+
+# 输出结果为：
+
 0 one
 1 two
 2 three
 
->>> # for 循环使用 enumerate
->>> seq = ['one', 'two', 'three']
->>> for i, element in enumerate(seq):
-...     print i, element
-...
+# for 循环使用 enumerate
+seq = ['one', 'two', 'three']
+for i, element in enumerate(seq):
+    print(i, element)
+
+# 输出结果为：
+
 0 one
 1 two
 2 three
 ```
 
 ### 匿名函数
+python 使用 lambda 来创建匿名函数。
+
+所谓匿名，意即不再使用 def 语句这样标准的形式定义一个函数。
+
+- lambda 只是一个表达式，函数体比 def 简单很多。
+- lambda的主体是一个表达式，而不是一个代码块。仅仅能在lambda表达式中封装有限的逻辑进去。
+- lambda 函数拥有自己的命名空间，且不能访问自己参数列表之外或全局命名空间里的参数。
+- 虽然lambda函数看起来只能写一行，却不等同于C或C++的内联函数，后者的目的是调用小函数时不占用栈内存从而增加运行效率。
 
 ```python
 >>> sum = lambda arg1, arg2: arg1 + arg2
