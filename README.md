@@ -2,15 +2,13 @@
 <a href='https://gitee.com/eternidad33/csp'><img src='https://gitee.com/eternidad33/csp/widgets/widget_6.svg' alt='Fork me on Gitee'></img></a>
 <br/>
 <br/>
-<a href="https://gitee.com/eternidad33/csp/tree/master/Java"><img src="https://img.shields.io/badge/Java题解-fe0002" alt="Java题解"></a>
-<a href="https://gitee.com/eternidad33/csp/tree/master/Python"><img src="https://img.shields.io/badge/Python题解-3771a1" alt="Python题解"></a>
+<a href="/Java"><img src="https://img.shields.io/badge/Java题解-fe0002" alt="Java题解"></a>
+<a href="/Python"><img src="https://img.shields.io/badge/Python题解-3771a1" alt="Python题解"></a>
 <a href="https://github.com/eternidad33/csp"><img src="https://img.shields.io/badge/Github-272636" alt="Github"></a>
 <a href="https://gitee.com/eternidad33/csp"><img src="https://img.shields.io/badge/Gitee-c71d24" alt="Gitee"></a>
 </p>
 
 # CSP 题解
-
-> 推荐使用[码云](https://gitee.com/eternidad33/csp)查看，因为在 GitHub 中查看 Jupyter Notebook 编写的目录并不能很好地来回跳转，在码云上还是可以的，而且码云访问速度还是比较快的。
 
 ## 🤖 介绍
 
