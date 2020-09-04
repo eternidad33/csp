@@ -24,9 +24,9 @@ def vismerge(ip_pre1: tuple, ip_pre2: tuple) -> tuple:  # 同级合并
     ip1, ip2 = ip_pre1[0], ip_pre2[0]
     if len1 == len2 and ip1[:len1 - 1] == ip2[:len1 - 1] and ip1[len1 - 1] != ip2[len1 - 1]:
         # 1011-4 & 1010-4 -> 101-3
-        return (True, (ip1[:len1 - 1].ljust(32, '0'), len1 - 1))
+        return True, (ip1[:len1 - 1].ljust(32, '0'), len1 - 1)
     else:
-        return (False, 0)
+        return False, 0
 
 
 def formatIP(iplist: list, ip_split: list) -> str:
