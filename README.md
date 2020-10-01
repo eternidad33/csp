@@ -35,7 +35,7 @@ Python 实现历年 CSP 认证满分答案
 
 > 革命尚未成功，同志仍须努力。
 
-![200分](https://cdn.jsdelivr.net/gh/eternidad33/picbed/img/6ddb6715540c425e955ed5ebaacb1427.jpg)
+![](https://gitee.com/eternidad33/picbed/raw/master/img/QQ%E6%88%AA%E5%9B%BE20201001121155.png)
 
 
 
