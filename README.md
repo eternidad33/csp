@@ -37,10 +37,3 @@ Python 实现历年 CSP 认证满分答案
 
 ![](https://gitee.com/eternidad33/picbed/raw/master/img/QQ%E6%88%AA%E5%9B%BE20201001121155.png)
 
-
-
----
-
-<p align='center'>
-<a href="https://gitee.com/eternidad33/csp"><img src="https://gitee.com/eternidad33/csp/widgets/widget_card.svg?colors=393222,ebdfc1,fffae5,d8ca9f,393222,a28b40" alt="Gitee"></a>
-</p>
