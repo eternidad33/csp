@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>历年CSP认证部分题解</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Description" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/docsify/lib/themes/buble.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css"
+    />
+  </head>
+  <body>
+    <div data-app id="app">加载中。。。</div>
+    <script>
+      window.$docsify = {
+        plugins: [
+          function(hook) {
+            var footer = [
+              '<hr/>',
+              '<footer>',
+              '<span><a href="https://github.com/eternidad33">vigilr</a> &copy;2021.</span>',
+              '<span>Proudly published with <a href="https://github.com/docsifyjs/docsify">docsify</a>.</span>',
+              '</footer>'
+            ].join('');
+            hook.afterEach(function(html) {
+              return html + footer;
+            });
+          }
+        ],
+        coverpage: true,
+        name: "<span>文章列表</span>",
+        repo: "eternidad33/csp",
+        loadSidebar: true,
+        subMaxLevel: 2,
+        loadNavbar: true,
+      };
+    </script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
+  </body>
+</html>
