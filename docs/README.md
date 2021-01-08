@@ -10,15 +10,15 @@ npm i docsify-cli -g
 
 ### 2.初始化项目
 
-如果想在项目的 ./doc 目录里写文档，直接通过 init 初始化项目。
+如果想在项目的 ./docs 目录里写文档，直接通过 init 初始化项目。
 
 ```bash
-docsify init ./doc
+docsify init ./docs
 ```
 
 ### 3.写文档
 
-初始化成功后，可以看到 ./doc 目录下创建的几个文件
+初始化成功后，可以看到 ./docs 目录下创建的几个文件
 
 - `index.html` 入口文件
 - `README.md` 会做为主页内容渲染
